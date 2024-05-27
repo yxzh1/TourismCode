@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{% block  title %}登录{% endblock %}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="/static/img/favicon.png" rel="icon">
+  <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="/static/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="/static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/static/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="/static/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <main style="background:url('/static/bg.jpg');background-repeat:no-repeat;background-size:cover">
+<!--      <main style="background:url('https://img1.baidu.com/it/u=2571995243,1755597314&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800');background-repeat:no-repeat;background-size:cover">-->
+
+
+    <div class="container" >
+
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+              <div class="d-flex justify-content-center py-4">
+                <a href="index.html" class="logo d-flex align-items-center w-auto">
+                  <img src="assets/img/logo.png" alt="">
+                  <span class="d-none d-lg-block">旅游数据分析推荐系统</span>
+                </a>
+              </div><!-- End Logo -->
+                  {% block  content %}
+                      <div class="card mb-3">
+                                <div class="card-body">
+
+                                  <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">欢迎登录</h5>
+                                    <p class="text-center small">输入用户名和密码</p>
+                                  </div>
+
+                                  <form method="POST" action="{% url 'login' %}" class="row g-3 needs-validation" novalidate>
+
+                                    <div class="col-12">
+                                      <label for="yourUsername" class="form-label">用户名</label>
+                                      <div class="input-group has-validation">
+                                        <input type="text" name="username" class="form-control" id="yourUsername" required>
+                                        <div class="invalid-feedback">请输入您的用户名</div>
+                                      </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                      <label for="yourPassword" class="form-label">密码</label>
+                                      <input type="password" name="password" class="form-control" id="yourPassword" required>
+                                      <div class="invalid-feedback">请输入您的密码</div>
+                                    </div>
+
+                                    <div class="col-12">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
+                                        <label class="form-check-label" for="rememberMe">记住我</label>
+                                      </div>
+                                    </div>
+                                    <div class="col-12">
+                                      <button class="btn btn-primary w-100" type="submit">登录</button>
+                                    </div>
+                                    <div class="col-12">
+                                      <p class="small mb-0">还没有账号? <a href="{% url 'register' %}">创建账号</a></p>
+                                    </div>
+                                  </form>
+
+                                </div>
+                              </div>
+                      </div>
+                  {% endblock %}
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+</body>
+
+</html>
